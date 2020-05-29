@@ -22,8 +22,47 @@ h1 span {
     border: 4px dashed #20bcd5;
     padding: 10px;
 }
-input[type=submit]:hover {
+input[type=submit],select:hover {
   background-color: #45a049;
+}
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px;
+  width: 70px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 0px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right:0px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
 }
 
 
@@ -32,13 +71,13 @@ input[type=submit]:hover {
   </head>
   <body>
 
-    <h1><span>TTA WALL</span></h1>
+<h1><span>TTA WALL</span></h1>
 <iframe  src="listy.html" height="200px" width="100%" id="ifrm"></iframe>
 
 <form id="form1" onsubmit="postTxt()">
   <label for="fname">Add to list:</label><br>
   <input type="text" id="newTxt" value=""><br><br>
-  <input type="submit" value="Submit">
+  <input Class="button" type="submit" value="Submit">
 
   <script src="script1.js"></script>
 </form>
